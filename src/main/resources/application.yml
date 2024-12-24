@@ -1,0 +1,10 @@
+#
+# 스프링 프로파일 그룹화
+#
+
+spring:
+  profiles:
+    active: dev
+    group:
+      dev: common, dev
+      test: common, test

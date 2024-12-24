@@ -1,0 +1,38 @@
+#
+# 스프링부트 애플리케이션 공통 환경 설정
+#
+
+
+spring:
+  config:
+    activate:
+      on-profile:
+        - common
+  # 애플리케이션 이름 지정
+  application:
+    name: going-project-v.1.0
+  main:
+    # 런타임시 콘솔 상에 출력되는 배너 끄기
+    banner-mode: off
+  # 웹 브라우저의 새로고침을 통해 화면단 변경 내용 적용을 위한 타임리프 경로와 캐시값 설정
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    suffix: .html
+    cache: false
+  # 웹 브라우저의 새로고침을 통해 화면단 변경 내용 적용을 위한 정적 리소스의 경로와 캐시값 설정
+  web:
+    resources:
+      static-locations:
+        - file:src/main/resources/static/
+      cache:
+        period: 36000
+
+server:
+  # 내장 톰캣 서버의 포트 번호 변경
+  port: 80  
+  servlet:
+    # HTTP 요청 및 응답의 인코딩 설정
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
