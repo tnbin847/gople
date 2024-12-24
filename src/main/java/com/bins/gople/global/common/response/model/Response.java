@@ -7,9 +7,6 @@ import java.time.LocalDateTime;
 
 /**
  * 성공 응답과 에러 및 실패 응답 모두 공통적으로 응답 바디부에서 포함할 필수 데이터들을 정의한 클래스
- *
- * @author PARK SU BIN
- * @version v.1.0
  */
 
 

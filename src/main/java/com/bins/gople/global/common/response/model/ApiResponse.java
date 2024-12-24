@@ -6,9 +6,6 @@ import lombok.Getter;
 
 /**
  * 성공 응답 클래스
- *
- * @author PARK SU BIN
- * @version v.1.0
  */
 
 

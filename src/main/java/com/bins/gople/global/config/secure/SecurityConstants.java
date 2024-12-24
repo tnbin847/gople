@@ -2,9 +2,6 @@ package com.bins.gople.global.config.secure;
 
 /**
  * 스프링 시큐리티 처리를 위한 상수들을 정의해놓은 상수 클래스
- *
- * @author PARK SU BIN
- * @version v.1.0
  */
 
 

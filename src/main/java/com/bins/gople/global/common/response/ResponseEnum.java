@@ -7,9 +7,6 @@ import org.springframework.http.HttpStatus;
 
 /**
  * API 응답 코드(성공 또는 에러)와 관련된 정보 (응답 코드, HTTP 상태코드, 응답 메시지 등)를 정의 및 관리하기 위한 {@link Enum}클래스
- *
- * @author PARK SU BIN
- * @version v.1.0
  */
 
 

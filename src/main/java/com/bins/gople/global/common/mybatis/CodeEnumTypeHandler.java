@@ -12,9 +12,6 @@ import java.sql.SQLException;
 /**
  * {@link CodeEnum}을 구현한 {@link Enum}클래스에 정의된 코드값을 데이터베이스에 저장하거나, 데이터베이스로부터 가져온 코드값을 알맞은 {@link Enum}으로
  * 변환하는 역할을 수행하는 커스텀 타입 핸들러 클래스
- *
- * @author PARK SU BIN
- * @version v.1.0
  */
 
 
