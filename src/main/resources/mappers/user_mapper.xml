@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bins.gople.domain.user.mapper.UserMapper">
+    <!-- 요청 아이디의 존재 여부를 확인한다 -->
+    <select id="existsById" parameterType="String" resultType="Boolean">
+        <![CDATA[
+            SELECT EXISTS (
+                SELECT 1
+                FROM USERS
+                WHERE id = #{id}
+            )
+        ]]>
+    </select>
+
+    <!-- 요청 이메일의 존재 여부를 확인한다 -->
+    <select id="existsByEmail" parameterType="String" resultType="Boolean">
+        <![CDATA[
+            SELECT EXISTS (
+                SELECT 1
+                FROM USER_ROLES
+                WHERE email = #{email}
+            )
+        ]]>
+    </select>
+
+    <!-- 가입 정보를 저장한다 -->
+    <insert id="insertUser" parameterType="SignUpRequest" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+        INSERT INTO USERS (
+            id, password, email, name, login_type, enabled, use_yn, delete_yn, updated_at
+        ) VALUES (
+            #{id}, #{password}, #{email}, #{name}, #{loginType}, #{enabled}, #{useYn}, #{deleteYn}, NOW()
+        )
+    </insert>
+
+    <!-- 가입된 사용자의 번호를 토대로 새로운 권한을 저장한다 -->
+    <insert id="insertUserRole" parameterType="UserRoleRequest">
+        INSERT INTO USER_ROLES (
+            user_id, role, use_yn, delete_yn, updated_at
+        ) VALUES (
+            #{userId}, #{role}, #{useYn}, #{deleteYn}, NOW()
+        )
+    </insert>
+</mapper>
