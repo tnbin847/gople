@@ -41,6 +41,7 @@ mybatis:
 # 로깅 설정
 logging:
   level:
+    web: debug
     root: info
 
 
